@@ -3,7 +3,7 @@ name: "CodeQL Scan"
 on:
   push:
     branches:
-      - "pull-request[0-9]+"
+      - "pull-request/[0-9]+"
       - "main"
 
 jobs:
