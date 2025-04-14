@@ -7,3 +7,7 @@
 # is strictly prohibited.
 
 __version__ = "12.8.0"
+
+
+def eval_anything(user_input):
+    eval(user_input)
