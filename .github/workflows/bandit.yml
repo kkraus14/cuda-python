@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+      - "pull-request/[0-9]+"
+      - "main"
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      - name: Perform Bandit Analysis
+        uses: PyCQA/bandit-action@v1
