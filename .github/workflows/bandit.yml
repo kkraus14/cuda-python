@@ -1,8 +1,6 @@
 on:
-  push:
-    branches:
-      - "pull-request/[0-9]+"
-      - "main"
+  pull_request:
+    branches: [main]
 
 jobs:
   analyze:
