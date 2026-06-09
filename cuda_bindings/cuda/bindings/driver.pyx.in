@@ -29794,7 +29794,7 @@ def cuLinkCreate(unsigned int numOptions, options : Optional[tuple[CUjit_option]
     options : list[:py:obj:`~.CUjit_option`]
         Array of linker and compiler options
     optionValues : list[Any]
-        Array of option values, each cast to void \*
+        Array of option values, each cast to void \\*
 
     Returns
     -------
@@ -29866,7 +29866,7 @@ def cuLinkAddData(state, typename not None : CUjitInputType, data, size_t size, 
         Options to be applied only for this input (overrides options from
         :py:obj:`~.cuLinkCreate`).
     optionValues : list[Any]
-        Array of option values, each cast to void \*.
+        Array of option values, each cast to void \\*.
 
     Returns
     -------
@@ -29939,7 +29939,7 @@ def cuLinkAddFile(state, typename not None : CUjitInputType, char* path, unsigne
         Options to be applied only for this input (overrides options from
         :py:obj:`~.cuLinkCreate`)
     optionValues : list[Any]
-        Array of option values, each cast to void \*
+        Array of option values, each cast to void \\*
 
     Returns
     -------

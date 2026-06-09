@@ -26052,7 +26052,7 @@ def cudaFuncSetCacheConfig(func, cacheConfig not None : cudaFuncCache):
     Returns
     -------
     cudaError_t
-        :py:obj:`~.cudaSuccess`, :py:obj:`~.cudaErrorInvalidDeviceFunction`\2
+        :py:obj:`~.cudaSuccess`, :py:obj:`~.cudaErrorInvalidDeviceFunction`\\2
 
     See Also
     --------
@@ -26097,7 +26097,7 @@ def cudaFuncGetAttributes(func):
     Returns
     -------
     cudaError_t
-        :py:obj:`~.cudaSuccess`, :py:obj:`~.cudaErrorInvalidDeviceFunction`\2
+        :py:obj:`~.cudaSuccess`, :py:obj:`~.cudaErrorInvalidDeviceFunction`\\2
     attr : :py:obj:`~.cudaFuncAttributes`
         Return pointer to function's attributes
 
