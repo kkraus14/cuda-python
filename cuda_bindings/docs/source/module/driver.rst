@@ -406,25 +406,25 @@ Data types used by CUDA driver
     .. autoattribute:: cuda.bindings.driver.CUstreamWaitValue_flags.CU_STREAM_WAIT_VALUE_GEQ
 
 
-        Wait until (int32_t)(*addr - value) >= 0 (or int64_t for 64 bit values). Note this is a cyclic comparison which ignores wraparound. (Default behavior.)
+        Wait until (int32_t)(\*addr - value) >= 0 (or int64_t for 64 bit values). Note this is a cyclic comparison which ignores wraparound. (Default behavior.)
 
 
     .. autoattribute:: cuda.bindings.driver.CUstreamWaitValue_flags.CU_STREAM_WAIT_VALUE_EQ
 
 
-        Wait until *addr == value.
+        Wait until \*addr == value.
 
 
     .. autoattribute:: cuda.bindings.driver.CUstreamWaitValue_flags.CU_STREAM_WAIT_VALUE_AND
 
 
-        Wait until (*addr & value) != 0.
+        Wait until (\*addr & value) != 0.
 
 
     .. autoattribute:: cuda.bindings.driver.CUstreamWaitValue_flags.CU_STREAM_WAIT_VALUE_NOR
 
 
-        Wait until ~(*addr | value) != 0. Support for this operation can be queried with :py:obj:`~.cuDeviceGetAttribute()` and :py:obj:`~.CU_DEVICE_ATTRIBUTE_CAN_USE_STREAM_WAIT_VALUE_NOR`.
+        Wait until ~(\*addr | value) != 0. Support for this operation can be queried with :py:obj:`~.cuDeviceGetAttribute()` and :py:obj:`~.CU_DEVICE_ATTRIBUTE_CAN_USE_STREAM_WAIT_VALUE_NOR`.
 
 
     .. autoattribute:: cuda.bindings.driver.CUstreamWaitValue_flags.CU_STREAM_WAIT_VALUE_FLUSH
@@ -506,19 +506,19 @@ Data types used by CUDA driver
     .. autoattribute:: cuda.bindings.driver.CUstreamAtomicReductionOpType.CU_STREAM_ATOMIC_REDUCTION_OP_OR
 
 
-        Performs an atomic OR: *(address) = *(address) | value
+        Performs an atomic OR: \*(address) = \*(address) | value
 
 
     .. autoattribute:: cuda.bindings.driver.CUstreamAtomicReductionOpType.CU_STREAM_ATOMIC_REDUCTION_OP_AND
 
 
-        Performs an atomic AND: *(address) = *(address) & value
+        Performs an atomic AND: \*(address) = \*(address) & value
 
 
     .. autoattribute:: cuda.bindings.driver.CUstreamAtomicReductionOpType.CU_STREAM_ATOMIC_REDUCTION_OP_ADD
 
 
-        Performs an atomic ADD: *(address) = *(address) + value
+        Performs an atomic ADD: \*(address) = \*(address) + value
 
 .. autoclass:: cuda.bindings.driver.CUstreamAtomicReductionDataType
 
@@ -2118,13 +2118,13 @@ Data types used by CUDA driver
     .. autoattribute:: cuda.bindings.driver.CUfunction_attribute.CU_FUNC_ATTRIBUTE_PTX_VERSION
 
 
-        The PTX virtual architecture version for which the function was compiled. This value is the major PTX version * 10 + the minor PTX version, so a PTX version 1.3 function would return the value 13. Note that this may return the undefined value of 0 for cubins compiled prior to CUDA 3.0.
+        The PTX virtual architecture version for which the function was compiled. This value is the major PTX version \* 10 + the minor PTX version, so a PTX version 1.3 function would return the value 13. Note that this may return the undefined value of 0 for cubins compiled prior to CUDA 3.0.
 
 
     .. autoattribute:: cuda.bindings.driver.CUfunction_attribute.CU_FUNC_ATTRIBUTE_BINARY_VERSION
 
 
-        The binary architecture version for which the function was compiled. This value is the major binary version * 10 + the minor binary version, so a binary version 1.3 function would return the value 13. Note that this will return a value of 10 for legacy cubins that do not have a properly-encoded binary architecture version.
+        The binary architecture version for which the function was compiled. This value is the major binary version \* 10 + the minor binary version, so a binary version 1.3 function would return the value 13. Note that this will return a value of 10 for legacy cubins that do not have a properly-encoded binary architecture version.
 
 
     .. autoattribute:: cuda.bindings.driver.CUfunction_attribute.CU_FUNC_ATTRIBUTE_CACHE_MODE_CA
@@ -2451,7 +2451,7 @@ Data types used by CUDA driver
 
         Pointer to a buffer in which to print any log messages that are informational in nature (the buffer size is specified via option :py:obj:`~.CU_JIT_INFO_LOG_BUFFER_SIZE_BYTES`)
 
-        Option type: char *
+        Option type: char \*
 
         Applies to: compiler and linker
 
@@ -2473,7 +2473,7 @@ Data types used by CUDA driver
 
         Pointer to a buffer in which to print any log messages that reflect errors (the buffer size is specified via option :py:obj:`~.CU_JIT_ERROR_LOG_BUFFER_SIZE_BYTES`)
 
-        Option type: char *
+        Option type: char \*
 
         Applies to: compiler and linker
 
@@ -2523,7 +2523,7 @@ Data types used by CUDA driver
     .. autoattribute:: cuda.bindings.driver.CUjit_option.CU_JIT_FALLBACK_STRATEGY
 
 
-        Specifies choice of fallback strategy if matching cubin is not found. Choice is based on supplied :py:obj:`~.CUjit_fallback`. This option cannot be used with cuLink* APIs as the linker requires exact matches.
+        Specifies choice of fallback strategy if matching cubin is not found. Choice is based on supplied :py:obj:`~.CUjit_fallback`. This option cannot be used with cuLink\* APIs as the linker requires exact matches.
 
         Option type: unsigned int for enumerated type :py:obj:`~.CUjit_fallback`
 
@@ -2597,7 +2597,7 @@ Data types used by CUDA driver
 
         It is illegal to register the same device symbol at multiple addresses.
 
-        Option type: const char **
+        Option type: const char \*\*
 
         Applies to: dynamic linker only
 
@@ -2609,7 +2609,7 @@ Data types used by CUDA driver
 
         Must contain :py:obj:`~.CU_JIT_GLOBAL_SYMBOL_COUNT` entries.
 
-        Option type: void **
+        Option type: void \*\*
 
         Applies to: dynamic linker only
 

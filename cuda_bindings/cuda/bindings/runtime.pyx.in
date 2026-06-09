@@ -5723,7 +5723,7 @@ class cudaJitOption(_FastEnum):
         'Pointer to a buffer in which to print any log messages that are\n'
         'informational in nature (the buffer size is specified via option\n'
         ':py:obj:`~.cudaJitInfoLogBufferSizeBytes`)\n'
-        'Option type: char *\n'
+        'Option type: char \\*\n'
         'Applies to: compiler and linker\n'
     ){{endif}}
     {{if 'cudaJitInfoLogBufferSizeBytes' in found_values}}
@@ -5743,7 +5743,7 @@ class cudaJitOption(_FastEnum):
         'Pointer to a buffer in which to print any log messages that reflect errors\n'
         '(the buffer size is specified via option\n'
         ':py:obj:`~.cudaJitErrorLogBufferSizeBytes`)\n'
-        'Option type: char *\n'
+        'Option type: char \\*\n'
         'Applies to: compiler and linker\n'
     ){{endif}}
     {{if 'cudaJitErrorLogBufferSizeBytes' in found_values}}
@@ -10886,13 +10886,13 @@ cdef class cudaFuncAttributes:
     {{if 'cudaFuncAttributes.ptxVersion' in found_struct}}
     ptxVersion : int
         The PTX virtual architecture version for which the function was
-        compiled. This value is the major PTX version * 10 + the minor PTX
+        compiled. This value is the major PTX version \* 10 + the minor PTX
         version, so a PTX version 1.3 function would return the value 13.
     {{endif}}
     {{if 'cudaFuncAttributes.binaryVersion' in found_struct}}
     binaryVersion : int
         The binary architecture version for which the function was
-        compiled. This value is the major binary version * 10 + the minor
+        compiled. This value is the major binary version \* 10 + the minor
         binary version, so a binary version 1.3 function would return the
         value 13.
     {{endif}}
@@ -11654,7 +11654,7 @@ cdef class cudaMemAllocNodeParams:
     {{endif}}
     {{if 'cudaMemAllocNodeParams.accessDescCount' in found_struct}}
     accessDescCount : size_t
-        in: Number of `accessDescs`s
+        in: Number of ``accessDescs``\s
     {{endif}}
     {{if 'cudaMemAllocNodeParams.bytesize' in found_struct}}
     bytesize : size_t
@@ -11805,7 +11805,7 @@ cdef class cudaMemAllocNodeParamsV2:
     {{endif}}
     {{if 'cudaMemAllocNodeParamsV2.accessDescCount' in found_struct}}
     accessDescCount : size_t
-        in: Number of `accessDescs`s
+        in: Number of ``accessDescs``\s
     {{endif}}
     {{if 'cudaMemAllocNodeParamsV2.bytesize' in found_struct}}
     bytesize : size_t
@@ -26052,7 +26052,7 @@ def cudaFuncSetCacheConfig(func, cacheConfig not None : cudaFuncCache):
     Returns
     -------
     cudaError_t
-        :py:obj:`~.cudaSuccess`, :py:obj:`~.cudaErrorInvalidDeviceFunction`2
+        :py:obj:`~.cudaSuccess`, :py:obj:`~.cudaErrorInvalidDeviceFunction`\2
 
     See Also
     --------
@@ -26097,7 +26097,7 @@ def cudaFuncGetAttributes(func):
     Returns
     -------
     cudaError_t
-        :py:obj:`~.cudaSuccess`, :py:obj:`~.cudaErrorInvalidDeviceFunction`2
+        :py:obj:`~.cudaSuccess`, :py:obj:`~.cudaErrorInvalidDeviceFunction`\2
     attr : :py:obj:`~.cudaFuncAttributes`
         Return pointer to function's attributes
 
@@ -31139,7 +31139,7 @@ def cudaMallocAsync(size_t size, hStream):
     """ Allocates memory with stream ordered semantics.
 
     Inserts an allocation operation into `hStream`. A pointer to the
-    allocated memory is returned immediately in *dptr. The allocation must
+    allocated memory is returned immediately in \*dptr. The allocation must
     not be accessed until the the allocation operation completes. The
     allocation comes from the memory pool associated with the stream's
     device.
@@ -31891,7 +31891,7 @@ def cudaMallocFromPoolAsync(size_t size, memPool, stream):
     """ Allocates memory from a specified pool with stream ordered semantics.
 
     Inserts an allocation operation into `hStream`. A pointer to the
-    allocated memory is returned immediately in *dptr. The allocation must
+    allocated memory is returned immediately in \*dptr. The allocation must
     not be accessed until the the allocation operation completes. The
     allocation comes from the specified memory pool.
 
@@ -32849,12 +32849,12 @@ def cudaCreateTextureObject(pResDesc : Optional[cudaResourceDesc], pTexDesc : Op
     :py:obj:`~.cudaResourceDesc`::res::pitch2D::width and
     :py:obj:`~.cudaResourceDesc`::res::pitch2D::height specify the width
     and height of the array in elements, and cannot exceed
-    :py:obj:`~.cudaDeviceProp.maxTexture2DLinear`[0] and
-    :py:obj:`~.cudaDeviceProp.maxTexture2DLinear`[1] respectively.
+    :py:obj:`~.cudaDeviceProp.maxTexture2DLinear`\[0] and
+    :py:obj:`~.cudaDeviceProp.maxTexture2DLinear`\[1] respectively.
     :py:obj:`~.cudaResourceDesc`::res::pitch2D::pitchInBytes specifies the
     pitch between two rows in bytes and has to be aligned to
     :py:obj:`~.cudaDeviceProp.texturePitchAlignment`. Pitch cannot exceed
-    :py:obj:`~.cudaDeviceProp.maxTexture2DLinear`[2].
+    :py:obj:`~.cudaDeviceProp.maxTexture2DLinear`\[2].
 
     The :py:obj:`~.cudaTextureDesc` struct is defined as
 
@@ -33631,7 +33631,7 @@ def cudaGraphAddKernelNode(graph, pDependencies : Optional[tuple[cudaGraphNode_t
 
     1) Kernel parameters can be specified via `kernelParams`. If the kernel
     has N parameters, then `kernelParams` needs to be an array of N
-    pointers. Each pointer, from `kernelParams`[0] to `kernelParams`[N-1],
+    pointers. Each pointer, from ``kernelParams``\[0] to ``kernelParams``\[N-1],
     points to the region of memory from which the actual parameter will be
     copied. The number of kernel parameters and their offsets and sizes do
     not need to be specified as that information is retrieved directly from
@@ -41557,7 +41557,7 @@ def cudaGraphicsResourceGetMappedEglFrame(resource, unsigned int index, unsigned
 def cudaEventCreateFromEGLSync(eglSync, unsigned int flags):
     """ Creates an event from EGLSync object.
 
-    Creates an event *phEvent from an EGLSyncKHR eglSync with the flages
+    Creates an event \*phEvent from an EGLSyncKHR eglSync with the flages
     specified via `flags`. Valid flags include:
 
     - :py:obj:`~.cudaEventDefault`: Default event creation flag.

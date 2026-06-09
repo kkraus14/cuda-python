@@ -3384,7 +3384,7 @@ Data types used by CUDA Runtime
 
         Pointer to a buffer in which to print any log messages that are informational in nature (the buffer size is specified via option :py:obj:`~.cudaJitInfoLogBufferSizeBytes`)
 
-        Option type: char *
+        Option type: char \*
 
         Applies to: compiler and linker
 
@@ -3406,7 +3406,7 @@ Data types used by CUDA Runtime
 
         Pointer to a buffer in which to print any log messages that reflect errors (the buffer size is specified via option :py:obj:`~.cudaJitErrorLogBufferSizeBytes`)
 
-        Option type: char *
+        Option type: char \*
 
         Applies to: compiler and linker
 
@@ -6403,11 +6403,11 @@ The types ::CUevent and cudaEvent_t are identical and may be used interchangeabl
 
 
 
-The types ::CUarray and struct ::cudaArray * represent the same data type and may be used interchangeably by casting the two types between each other.
+The types ::CUarray and struct ::cudaArray \* represent the same data type and may be used interchangeably by casting the two types between each other.
 
-In order to use a ::CUarray in a CUDA Runtime API function which takes a struct ::cudaArray *, it is necessary to explicitly cast the ::CUarray to a struct ::cudaArray *.
+In order to use a ::CUarray in a CUDA Runtime API function which takes a struct ::cudaArray \*, it is necessary to explicitly cast the ::CUarray to a struct ::cudaArray \*.
 
-In order to use a struct ::cudaArray * in a CUDA Driver API function which takes a ::CUarray, it is necessary to explicitly cast the struct ::cudaArray * to a ::CUarray .
+In order to use a struct ::cudaArray \* in a CUDA Driver API function which takes a ::CUarray, it is necessary to explicitly cast the struct ::cudaArray \* to a ::CUarray .
 
 
 
